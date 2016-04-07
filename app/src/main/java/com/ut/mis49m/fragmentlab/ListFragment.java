@@ -15,16 +15,6 @@ import android.widget.ListView;
 
 public class ListFragment extends Fragment {
 
-    ListFragment.OnItemClickListener onItemClickListener;
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-        if(context instanceof MainActivity)
-            onItemClickListener = (MainActivity) context;
-
-    }
 
     @Nullable
     @Override
@@ -43,7 +33,7 @@ public class ListFragment extends Fragment {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                onItemClickListener.onItemClicked(i);
+
             }
 
         });
@@ -51,7 +41,5 @@ public class ListFragment extends Fragment {
         return view;
     }
 
-    public interface OnItemClickListener{
-        public void onItemClicked(int pos);
-    }
+
 }
